@@ -13,10 +13,12 @@ import ch.iet_gibb.heatcalculatorfx.controller.HeatController;
 
 public class HeatView {
     protected Stage stage;
+    protected HeatController controller;
 
 
     public HeatView(Stage stage, HeatController controller) {
         this.stage=stage;
+        this.controller = controller;
     }
 
 
@@ -39,6 +41,7 @@ public class HeatView {
         /* Button erstellen und dem Layout anfügen, um zwischen den Labels navigieren zu können*/
         Button btnNext;
         btnNext = new Button("→");
+        btnNext.setOnAction(controller);
         layout.getChildren().add(btnNext);
 
         /* Scene erstellen und die View darstellen */

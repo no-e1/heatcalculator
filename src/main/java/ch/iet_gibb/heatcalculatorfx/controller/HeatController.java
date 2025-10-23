@@ -2,10 +2,11 @@ package ch.iet_gibb.heatcalculatorfx.controller;
 
 import ch.iet_gibb.heatcalculatorfx.model.HeatContainer;
 import ch.iet_gibb.heatcalculatorfx.view.HeatView;
+import javafx.event.ActionEvent;
 
 import java.util.List;
 
-public class HeatController {
+public class HeatController implements javafx.event.EventHandler<ActionEvent> {
 
 
     protected List<HeatContainer> models;
@@ -16,7 +17,7 @@ public class HeatController {
         this.models = models;
     }
 
-    public void setView(HeatView){
+    public void setView(HeatView view){
         this.view=view;
     }
 
@@ -37,5 +38,10 @@ public class HeatController {
     public String getRoof(){
         //greift auf die Liste zu, spricht das Element currentRoof an und ruft auf diesem Objekt die toSTring Mehtode auf
         return models.get(currentRoof).toString();
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        showNextRoof();
     }
 }
