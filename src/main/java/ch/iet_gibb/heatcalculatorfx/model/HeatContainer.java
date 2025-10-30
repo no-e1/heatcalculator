@@ -1,5 +1,10 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Superklasse HeatContainer
  * @author Noel Kohn
@@ -8,7 +13,7 @@ package ch.iet_gibb.heatcalculatorfx.model;
  *
  * @since 21.08.2025
  */
-public abstract class HeatContainer {
+public abstract class HeatContainer implements InterfaceRoof {
 
     /** Leistung eines Panels */
     protected double panelPower;
@@ -65,6 +70,16 @@ public abstract class HeatContainer {
     }
 
     public abstract int getCount();
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = new ArrayList<>();
+        Property sunHours = new Property("Sonnenstunden:", Double.toString(getSunHours()) + "");
+        properties.add(sunHours);
+        Property panelPower = new Property("Panelpower:", Double.toString(getPanelPower()) + "");
+        properties.add(panelPower);
+        return properties;
+    }
 
     @Override
     public String toString() {

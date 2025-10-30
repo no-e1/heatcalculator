@@ -1,5 +1,7 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+import java.util.List;
 /**
  * Roof By Area berechnung
  * @author Noel Kohn
@@ -113,4 +115,19 @@ public class RoofSolarSystemByArea extends HeatContainer {
                 "\n" + toString();
         return roofresult;
     }
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+        Property roofWidth = new Property("Dachbreite:", Double.toString(getRoofWidth()));
+        properties.add(roofWidth);
+        Property roofLength = new Property("Dachlänge:", Double.toString(getRoofLength()));
+        properties.add(roofLength);
+        Property panelWidth = new Property("Panelbreite:", Double.toString(getPanelWidth()));
+        properties.add(panelWidth);
+        Property panelLength = new Property("Panellänge:", Double.toString(getPanelLength()));
+        properties.add(panelLength);
+        return properties;
+    }
+
 }

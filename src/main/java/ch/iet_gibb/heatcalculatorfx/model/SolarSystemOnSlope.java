@@ -1,5 +1,9 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.List;
+
 /**
  * Slope berechnung
  * @author Noel Kohn
@@ -86,5 +90,18 @@ public class SolarSystemOnSlope extends HeatContainer {
                 "\n" + toString();
         return roofresult;
     }
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+        Property slopeRows = new Property("Anzahl Reihen:", Integer.toString(getSlopeRows()));
+        properties.add(slopeRows);
+        Property panelLength = new Property("Panellänge:", Double.toString(getPanelLength()));
+        properties.add(panelLength);
+        Property slopeLength = new Property("Abhanglänge:", Double.toString(getSlopeLength()));
+        properties.add(slopeLength);
+        return properties;
+    }
+
 }
 

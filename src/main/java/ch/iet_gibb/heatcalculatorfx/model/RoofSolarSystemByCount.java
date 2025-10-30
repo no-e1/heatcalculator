@@ -1,5 +1,9 @@
 package ch.iet_gibb.heatcalculatorfx.model;
 
+import ch.iet_gibb.heatcalculatorfx.property.Property;
+
+import java.util.List;
+
 /**
  * Roof By Count berechnung
  * @author Noel Kohn
@@ -72,5 +76,17 @@ public class RoofSolarSystemByCount extends HeatContainer {
         String roofresult = "----------------------------------" +
                 "\n" + toString();
         return roofresult;
+    }
+
+    @Override
+    public List<Property> getProperties() {
+        List<Property> properties = super.getProperties();
+        Property panelsPerRow = new Property("Panels pro Reihe:", Integer.toString(getPanelsPerRow()));
+        properties.add(panelsPerRow);
+        Property countedRows = new Property("Anzahl Reihen:", Integer.toString(getCountedRows()));
+        properties.add(countedRows);
+        Property getCount = new Property("Anzahl Panels:", Integer.toString(getCount()));
+        properties.add(getCount);
+        return properties;
     }
 }

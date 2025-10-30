@@ -32,7 +32,8 @@ public class HeatView {
 
         /* Textfeld erstellen und dem Layout anfügen */
         Text labelText = new Text();
-        labelText.setText("Label");
+        System.out.println(controller.getRoof());
+        labelText.setText(controller.getRoof());
         labelText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
         // Optisch ansprechender Hintergrund mittels CSS definieren
         labelText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);");
