@@ -22,7 +22,7 @@ public class HeatController implements javafx.event.EventHandler<ActionEvent> {
     }
 
     public void startView(){
-        view.startView();
+        view.startView(models.get(currentRoof));
     }
 
     public void showNextRoof(){
@@ -32,7 +32,7 @@ public class HeatController implements javafx.event.EventHandler<ActionEvent> {
         }else{
             currentRoof = 0;
         }
-        view.startView();
+        view.startView(models.get(currentRoof));
     }
 
     public String getRoof(){
