@@ -79,6 +79,11 @@ public class RoofSolarSystemByCount extends HeatContainer {
     }
 
     @Override
+    public String getTitle() {
+        return "ByCount";
+    }
+
+    @Override
     public List<Property> getProperties() {
         List<Property> properties = super.getProperties();
         Property panelsPerRow = new Property("Panels pro Reihe:", Integer.toString(getPanelsPerRow()));

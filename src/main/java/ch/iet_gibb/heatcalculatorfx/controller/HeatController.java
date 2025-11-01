@@ -2,6 +2,7 @@ package ch.iet_gibb.heatcalculatorfx.controller;
 
 import ch.iet_gibb.heatcalculatorfx.model.HeatContainer;
 import ch.iet_gibb.heatcalculatorfx.view.HeatView;
+import ch.iet_gibb.heatcalculatorfx.view.AlternativeHeatView;
 import javafx.event.ActionEvent;
 
 import java.util.List;
@@ -10,14 +11,14 @@ public class HeatController implements javafx.event.EventHandler<ActionEvent> {
 
 
     protected List<HeatContainer> models;
-    protected HeatView view;
+    protected ControllerViewInterface view;
     protected int currentRoof=0;
 
     public HeatController(List<HeatContainer> models) {
         this.models = models;
     }
 
-    public void setView(HeatView view){
+    public void setView(ControllerViewInterface view){
         this.view=view;
     }
 

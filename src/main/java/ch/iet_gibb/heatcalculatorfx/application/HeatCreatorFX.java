@@ -6,6 +6,7 @@ import ch.iet_gibb.heatcalculatorfx.model.HeatContainer;
 import ch.iet_gibb.heatcalculatorfx.model.RoofSolarSystemByArea;
 import ch.iet_gibb.heatcalculatorfx.model.RoofSolarSystemByCount;
 import ch.iet_gibb.heatcalculatorfx.model.SolarSystemOnSlope;
+import ch.iet_gibb.heatcalculatorfx.view.AlternativeHeatView;
 import ch.iet_gibb.heatcalculatorfx.view.HeatView;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -24,8 +25,9 @@ public class HeatCreatorFX extends Application{
     public void start(Stage stage) throws Exception {
         List<HeatContainer> models = createModels();
         HeatController controller = new HeatController(models);
+        HeatView alternativeView = new HeatView(stage, controller); // hier ändern um view zu wechseln: AlternativeHeatView oder HeatView
         HeatView view = new HeatView(stage, controller);
-        controller.setView(view);
+        controller.setView(alternativeView);
         controller.startView();
     }
 
@@ -39,4 +41,5 @@ public class HeatCreatorFX extends Application{
         labels.add(roof);
         return labels;
     }
+
 }

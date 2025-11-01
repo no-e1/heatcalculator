@@ -1,5 +1,6 @@
 package ch.iet_gibb.heatcalculatorfx.view;
 
+import ch.iet_gibb.heatcalculatorfx.controller.ControllerViewInterface;
 import ch.iet_gibb.heatcalculatorfx.model.InterfaceRoof;
 import ch.iet_gibb.heatcalculatorfx.controller.HeatController;
 import ch.iet_gibb.heatcalculatorfx.property.Property;
@@ -18,7 +19,7 @@ import javafx.scene.text.TextAlignment;
 
 import ch.iet_gibb.heatcalculatorfx.controller.HeatController;
 
-public class HeatView {
+public class HeatView implements ControllerViewInterface {
     protected Stage stage;
     protected HeatController controller;
 
@@ -28,9 +29,9 @@ public class HeatView {
         this.controller = controller;
     }
 
-
+    @Override
     public void startView(InterfaceRoof data) {
-        /* Layout erstellen (https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm
+         /* Layout erstellen (https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm
             um mehr Informationen über die Layout typen in JavaFX zu erhalten) */
         VBox layout = new VBox();
         // Padding und Abstand zwischen den Elementen setzen
@@ -38,7 +39,7 @@ public class HeatView {
         layout.setSpacing(20);
         /* Titel erstellen und dem Layout anfügen */
         Text labelText = new Text();
-        labelText.setText("Titel sollte hier stehen");
+        labelText.setText(data.getTitle());
         labelText.setFont(Font.font ("Tahoma", FontWeight.EXTRA_BOLD, 20));
         labelText.setStyle("-fx-font-family: monospace;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);");
         layout.getChildren().add(labelText);

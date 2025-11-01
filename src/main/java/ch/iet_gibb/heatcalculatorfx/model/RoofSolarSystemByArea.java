@@ -117,6 +117,11 @@ public class RoofSolarSystemByArea extends HeatContainer {
     }
 
     @Override
+    public String getTitle() {
+        return "ByArea";
+    }
+
+    @Override
     public List<Property> getProperties() {
         List<Property> properties = super.getProperties();
         Property roofWidth = new Property("Dachbreite:", Double.toString(getRoofWidth()));

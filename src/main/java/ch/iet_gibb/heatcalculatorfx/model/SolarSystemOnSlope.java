@@ -92,6 +92,11 @@ public class SolarSystemOnSlope extends HeatContainer {
     }
 
     @Override
+    public String getTitle() {
+        return "OnSlope";
+    }
+
+    @Override
     public List<Property> getProperties() {
         List<Property> properties = super.getProperties();
         Property slopeRows = new Property("Anzahl Reihen:", Integer.toString(getSlopeRows()));
