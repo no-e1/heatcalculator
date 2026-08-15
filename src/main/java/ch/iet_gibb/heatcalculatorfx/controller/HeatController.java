@@ -16,10 +16,9 @@ public class HeatController {
         this.models = models;
     }
 
-    public void setView(HeatView){
-        this.view=view;
-    }
-
+    public void setView(HeatView view) {
+    this.view = view;
+}
     public void startView(){
         view.startView();
     }
