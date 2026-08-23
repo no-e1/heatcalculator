@@ -13,7 +13,3 @@ Es werden drei Varianten abgebildet:
 ## Technologien
 
 Java, JavaFX und Maven
-
-## Kontext
-
-Entstanden im Rahmen des GIBB-Moduls 320 (Aug. – Okt. 2025) zum Erlernen der Grundlagen objektorientierter Programmierung.
