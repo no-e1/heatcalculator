@@ -13,3 +13,9 @@ Es werden drei Varianten abgebildet:
 ## Technologien
 
 Java, JavaFX und Maven
+
+## Screenshots
+
+<img src="screenshots/heatcalc_by_count.png" width="700">
+
+<img src="screenshots/heatcalc_on_slope.png" width="700">
